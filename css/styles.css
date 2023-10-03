@@ -77,7 +77,7 @@ nav a::before {
     display: block;
     height: 5px;
     width: 100%;
-    background: #444;
+    background: #e9edc9;
 
     position: absolute;
     top: 0;
