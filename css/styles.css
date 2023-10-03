@@ -62,7 +62,7 @@ nav a {
     display: block;
     height: 5px;
     width: 100%;
-    background: #EDF5E1;
+    background: #e9edc9;
 
     position: relative;
 }
@@ -106,16 +106,16 @@ nav a:hover::before {
 
 .detel h1 {
     font-size: 50px;
-    color: #00b7ff;
+    color: #2A9D8F;
     margin-bottom: 20px;
 }
 
 span {
-    color: rgb(46, 87, 163);
+    color: #e9c46a;
 }
 
-.detel p {
-    color: #555;
+.detel h2 {
+    color: #dfdfdf;
     line-height: 22px;
 }
 
