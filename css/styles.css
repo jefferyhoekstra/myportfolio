@@ -38,8 +38,9 @@ nav {
 }
 .bar {
     text-align: center;
-    background:#2e436e;
-    color: #2e436e;
+    background:#141d2e;
+    color: #141d2e;
+    margin:auto;
 }
 
 nav ul li {
