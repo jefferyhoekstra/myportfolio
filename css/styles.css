@@ -1,68 +1,102 @@
 
-* {
+body {
     margin: 0;
-    padding: 0;
-    font-family: verdana;
+    background: #222;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
 }
 
-body {
-    font-family: verdana;
-    width: auto;
-    height: auto;
-    margin: auto;
+.container {
+    width: 80%;
+    margin: 0 auto;
+
 }
 
 .construction {
-    text-align: center;
-    font-size: 2em;
-    background-color: rgb(255, 145, 0);
+    background: #ff8d30;
+}
+
+header {
+    background: #55d6aa;
+}
+
+.logo {
+    float:left;
+    padding: 10px 0;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 nav {
-    display: flex;
-    width: 84%;
-    margin: auto;
-    padding: 20px 10px;
-    align-items: center;
-    justify-content: space-between;
+    float:right;
 }
 
-.bar {
-    text-align: center;
-    background: #141d2e;
-    color: #141d2e;
-    margin: auto;
-}
-
-nav ul li {
-    display: inline-block;
+nav ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    margin: 10px 20px;
 }
 
-nav ul li a {
+nav li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    position: relative;
+}
+
+nav a {
+    color : #444;
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    background: #1f4186;
-    display: block;
-    border-radius: 5px;
-    margin: auto;
-    padding: 20px 12px;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
-nav ul li a:hover {
-    background: #3976f0;
+nav a:hover {
+    color: #000;
+
 }
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background: #444;
+
+    position: absolute;
+    top: 0;
+    width: 0;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
 
 .detel {
     margin-top: 15%;
-    text-align: center; /* Center text on all screen sizes */
+    text-align: left; /* Center text on all screen sizes */
+    padding-left: 350px;
 }
 
 .detel h1 {
     font-size: 50px;
-    color: #212121;
+    color: #00b7ff;
     margin-bottom: 20px;
 }
 
