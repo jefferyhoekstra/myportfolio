@@ -100,6 +100,7 @@ nav a:hover::before {
 
 span {
     color: #e9c46a;
+    col
 }
 
 .detel h2 {
@@ -124,6 +125,28 @@ footer {
     text-align: center;
 }
 
+.desc {
+    margin-top: 0%;
+    text-align: right;
+    margin-right: 15%;
+    display: flex; /* Use flexbox to control the layout */
+    flex-direction: column; /* Stack elements vertically */
+    
+}
+.desc h3 {
+    margin-top: 0%;
+    font-size: 35px;
+    color: #e9edc9;
+    font-style: italic;
+}
+
+.desc p {
+    color: #e9edc9;
+    width: 50%;
+    margin-left: auto;
+
+}
+
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
@@ -140,5 +163,16 @@ footer {
         margin-top: 10%; /* Reduced margin on smaller screens */
         margin-left: 0; /* Center text on smaller screens */
         text-align: center; /* Center text on smaller screens */
+    }
+    .desc{
+        text-align: center;
+        padding: 10px;
+        margin-top: 5%;
+        margin-right: 0;
+    }
+    
+    .desc p {
+        width: 100%; /* Make the paragraph full width on smaller screens */
+        margin-left: 0; /* Reset margin for smaller screens */
     }
 }
