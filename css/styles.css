@@ -90,14 +90,18 @@ nav a:hover::before {
 }
 
 .detel {
-    margin-top: 10%;
+    margin-top: 0%;
     text-align: left;
     margin-left: 15%;
-    padding: 20px; /* Added padding for better spacing */
+    padding: 10px; /* Added padding for better spacing */
+    width: 50%;
+    float: left;
+    position: relative;
+    font-size: 18px;
 }
 
 .detel h1 {
-    font-size: 50px;
+    font-size: 64px;
     color: #2A9D8F;
     margin-bottom: 20px;
 }
@@ -127,14 +131,18 @@ span {
 footer {
     padding-top: 650px;
     text-align: center;
+    
 }
 
 .desc {
-    margin-top: 0%;
+    margin-top: 7%;
     text-align: right;
-    margin-right: 15%;
-    display: flex; /* Use flexbox to control the layout */
-    flex-direction: column; /* Stack elements vertically */
+    margin-right: 10%;
+
+    width:50%;
+    float:right;
+
+    position: relative;
     
 }
 .desc h3 {
@@ -156,6 +164,13 @@ footer {
     width: 50%;
     margin-left: auto;
 
+
+}
+
+.content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between .detel and .desc */
+    align-items: center; /* Align content vertically */
 }
 
 
@@ -174,6 +189,13 @@ footer {
         margin-top: 10%; /* Reduced margin on smaller screens */
         margin-left: 0; /* Center text on smaller screens */
         text-align: center; /* Center text on smaller screens */
+        width: 100%;
+        float:none;
+        font-size: 16px
+    }
+
+    .detel h1 {
+        font-size: 50px;
     }
     .desc{
         text-align: center;
@@ -181,11 +203,19 @@ footer {
         margin-top: 5%;
         margin-right: 0;
         color: #e9edc9;
+        width: 100%;
+        float: none;
     }
     
     .desc p {
         width: 100%; /* Make the paragraph full width on smaller screens */
         margin-left: 0; /* Reset margin for smaller screens */
         color: #e9edc9;
+    }
+
+    .content {
+        display: block;
+        justify-content: space-around;
+        align-items: normal; /* Align content vertically */
     }
 }
