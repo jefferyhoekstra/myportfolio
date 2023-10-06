@@ -203,19 +203,21 @@ footer {
         margin-top: 5%;
         margin-right: 0;
         color: #e9edc9;
-        width: 80%;
+        width: 95%;
         float: none;
+        margin-left: 0;
     }
     
     .desc p {
-        width: 80%; /* Make the paragraph full width on smaller screens */
+        width: 95%; /* Make the paragraph full width on smaller screens */
         margin-left: 0; /* Reset margin for smaller screens */
         color: #e9edc9;
+        margin-right: 0;
     }
 
     .content {
         display: block;
         justify-content: space-around;
-        align-items: normal; /* Align content vertically */
+        align-items: center; /* Align content vertically */
     }
 }
