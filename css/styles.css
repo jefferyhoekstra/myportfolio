@@ -203,12 +203,12 @@ footer {
         margin-top: 5%;
         margin-right: 0;
         color: #e9edc9;
-        width: 100%;
+        width: 80%;
         float: none;
     }
     
     .desc p {
-        width: 100%; /* Make the paragraph full width on smaller screens */
+        width: 80%; /* Make the paragraph full width on smaller screens */
         margin-left: 0; /* Reset margin for smaller screens */
         color: #e9edc9;
     }
