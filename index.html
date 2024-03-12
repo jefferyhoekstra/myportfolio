@@ -3,50 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Blog</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Your Blog Name</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <img src="images/logo.png" alt="My Blog Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="posts.html">Blog Posts</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to My Professional Blog</h1>
-                <p>Explore my latest articles on web development, programming, and technology.</p>
+<body class="bg-gray-100">
+    <!-- Hero Section -->
+    <section class="hero bg-blue-500 text-white text-center p-20">
+        <h1 class="text-5xl font-bold">Your Blog Name</h1>
+        <p class="text-xl mt-4">A tagline that captures the essence of your blog.</p>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about my-20 px-10">
+        <h2 class="text-3xl font-bold text-center">About Me</h2>
+        <p class="text-lg text-gray-700 mt-5 max-w-4xl mx-auto">A brief paragraph introducing yourself or the purpose of your blog. Share your mission, what you write about, or what readers can expect.</p>
+    </section>
+    
+    <!-- Recent Posts Section -->
+    <section class="recent-posts my-20 px-10">
+        <h2 class="text-3xl font-bold text-center">Recent Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+            <!-- Dynamic post cards go here -->
+            <div class="post bg-white shadow-md rounded-lg p-5">
+                <img src="your-post-image-url.jpg" alt="Post Title" class="rounded-t-lg w-full h-48 object-cover">
+                <h3 class="text-xl font-bold mt-5">Post Title</h3>
+                <p class="text-gray-700 mt-2">A short excerpt from the post...</p>
+                <a href="#" class="text-blue-500 inline-block mt-4">Read More →</a>
             </div>
-        </section>
-        <section class="blog-posts">
-            <div class="container">
-                <article>
-                    <h2>Blog Post Title 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#">Read more</a>
-                </article>
-                <article>
-                    <h2>Blog Post Title 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#">Read more</a>
-                </article>
-                <!-- More articles -->
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 My Professional Blog. All rights reserved.</p>
+            <!-- Repeat for other posts -->
         </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-5">
+        <p>Contact me at: <a href="mailto:your.email@example.com" class="underline">your.email@example.com</a></p>
+        <div class="social-icons my-4">
+            <!-- Social icons linked to your profiles -->
+            <a href="your-twitter-profile-url" class="mx-2">Twitter</a>
+            <a href="your-linkedin-profile-url" class="mx-2">LinkedIn</a>
+            <!-- Add more as needed -->
+        </div>
+        <p>&copy; 2024 Your Blog Name. All rights reserved.</p>
     </footer>
-    <script src="js/script.js"></script>
 </body>
 </html>
