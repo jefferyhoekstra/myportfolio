@@ -39,6 +39,7 @@
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    navigator.geolocation.getCurrentPosition(success, error);
     navigator.geolocation.watchPosition(success, error);
 
     let marker, circle, zoomed;
