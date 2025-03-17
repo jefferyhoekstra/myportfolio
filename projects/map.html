@@ -1,80 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mobile tutorial - Leaflet</title>
-	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-		#map {
-			height: 100%;
-			width: 100vw;
-		}
-		#locateBtn {
-			position: absolute;
-			top: 20px;
-			left: 20px;
-			z-index: 999;
-			padding: 10px;
-			background-color: #007bff;
-			color: white;
-			border: none;
-			border-radius: 5px;
-		}
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Leaflet Geolocation</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+        crossorigin=""/>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; width: 100vw; }
+    #locateBtn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Add button to trigger geolocation -->
-<button id="locateBtn">Get My Location</button>
-<div id="map"></div>
-
-<script>
-	const map = L.map('map').fitWorld();
-
-	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
-
-	function onLocationFound(e) {
-		const radius = e.accuracy / 2;
-
-		const locationMarker = L.marker(e.latlng).addTo(map)
-			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
-
-		const locationCircle = L.circle(e.latlng, radius).addTo(map);
-	}
-
-	function onLocationError(e) {
-		alert(e.message);
-	}
-
-	// Wait for the user to click the button before requesting location
-	document.getElementById('locateBtn').addEventListener('click', function() {
-		// Locate the user
-		map.locate({setView: true, maxZoom: 16});
-	});
-
-	// Listen for location events
-	map.on('locationfound', onLocationFound);
-	map.on('locationerror', onLocationError);
-</script>
-
+  <!-- Button to trigger geolocation -->
+  <button id="locateBtn">Locate Me</button>
+  <div id="map"></div>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+          crossorigin=""></script>
+  <script>
+    // Initialize the map with a default view.
+    var map = L.map('map').setView([0, 0], 2);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+    
+    // Function to handle a successful geolocation response.
+    function success(pos) {
+      var lat = pos.coords.latitude;
+      var lng = pos.coords.longitude;
+      var accuracy = pos.coords.accuracy;
+      var latlng = [lat, lng];
+      
+      // Center the map on the user's location.
+      map.setView(latlng, 16);
+      
+      // Add a marker and a circle to show accuracy.
+      L.marker(latlng).addTo(map)
+        .bindPopup("You are within " + accuracy + " meters from this point").openPopup();
+      L.circle(latlng, {radius: accuracy}).addTo(map);
+    }
+    
+    // Function to handle geolocation errors.
+    function error(err) {
+      // Error code 1 means "Permission Denied."
+      alert("Geolocation error: " + err.message);
+    }
+    
+    // Trigger geolocation when the button is clicked.
+    document.getElementById('locateBtn').addEventListener('click', function() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
+      } else {
+        alert("Geolocation is not supported by your browser.");
+      }
+    });
+  </script>
 </body>
 </html>
