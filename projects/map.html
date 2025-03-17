@@ -21,6 +21,12 @@
             height: 100%;
             width: 100vw;
         }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -28,10 +34,14 @@
 
 <body>
     <h1>LocalStory Dev</h1>
+    <button onclick="getLocation()">Enable Location</button>
     <div id="map"></div>
+
+
 
 </body>
 <script>
+    
     var map = L.map('map').setView([0, 0], 2);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -40,7 +50,9 @@
     }).addTo(map);
 
     //LOCATION
-    navigator.geolocation.getCurrentPosition(success, error);
+    function getLocation() {
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
     navigator.geolocation.watchPosition(success, error);
 
     if (navigator.permissions) {
@@ -75,15 +87,13 @@
 
         if (err.code === 1) {
             alert("Please allow geolocation access");
-            navigator.permissions.query({ name: "geolocation" }).then(function (result) {
-                if (result.state === "denied") {
-                    alert("Location access is denied. Please enable it in Settings.");
-                }
-            });
         } else {
             alert("Cannot get current geolocation :(");
         }
+
+        
     }
+
 
 </script>
 
