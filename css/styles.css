@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
 }
 
 /* Header */
@@ -25,7 +25,7 @@ header {
 
 /* Main Content */
 .container {
-    flex: 1; /* Pushes footer down */
+    flex: 1; /* Pushes footer to the bottom */
     max-width: 900px;
     margin: auto;
     padding: 20px;
@@ -58,13 +58,12 @@ button:hover {
     background: #0056b3;
 }
 
-/* Footer */
+/* ✅ Footer - Let it follow the content naturally */
 footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    margin-top: auto; /* Ensures footer stays at the bottom */
     font-size: 0.9rem;
 }
