@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data1 %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <a href="/"><img src="/images/cornwall-realtor-logo.jpg" width="100px" alt=""></a>
+    <div id="navbar">
+        <a href="/downtown">Downtown</a>
+        <a href="/northend">Northend</a>
+        <a href="/eastend">Eastend</a>
+        <a href="/riverdale">Riverdale</a>
+    </div>
+    <h1>Welcome to <%= data1%></h1>
+    <form action="">
+        <button name="sort" value="ascending">Prices Ascendingly</button>
+        <button name="sort" value="descending">Prices Descendingly</button>    
+    </form>
+    <hr>
+    <% for(let i = 0; i < data.length; i++) {%>
+        <div>
+            <img src=<%= data[i].image %> alt="" width="200px">
+            <h3><%= data[i].address%></h3>
+            <p>Price: <%= data[i].price %></p>
+            <a href="/<%= data1 %>/<%=data[i].id %>">Visit Listing</a>
+            <hr>
+        </div>
+    <% } %> 
+</body>
+</html>

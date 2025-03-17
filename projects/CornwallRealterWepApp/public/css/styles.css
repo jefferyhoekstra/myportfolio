@@ -1,0 +1,16 @@
+body {
+    background-color: whitesmoke;
+}
+
+#navbar {
+    text-align: center;
+    background-color:antiquewhite;
+}
+
+h1, h2, h3, li {
+    text-transform: capitalize;
+}
+
+#landingPage {
+    text-align: center;
+}
