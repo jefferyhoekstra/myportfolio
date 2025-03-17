@@ -30,7 +30,7 @@ footer {
     background: #333;
     color: white;
     padding: 1px 0;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
