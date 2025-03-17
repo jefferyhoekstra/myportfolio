@@ -51,8 +51,18 @@
 
     //LOCATION
     function getLocation() {
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, error, {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+
+        
     navigator.geolocation.watchPosition(success, error);
 
     if (navigator.permissions) {
