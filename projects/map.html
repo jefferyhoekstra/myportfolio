@@ -62,7 +62,7 @@
             }
         }
 
-        
+
     navigator.geolocation.watchPosition(success, error);
 
     if (navigator.permissions) {
@@ -93,16 +93,16 @@
 
     }
 
-    function error(err) {
+    // function error(err) {
 
-        if (err.code === 1) {
-            alert("Please allow geolocation access");
-        } else {
-            alert("Cannot get current geolocation :(");
-        }
+    //     if (err.code === 1) {
+    //         alert("Please allow geolocation access");
+    //     } else {
+    //         alert("Cannot get current geolocation :(");
+    //     }
 
         
-    }
+    // }
 
 
 </script>
