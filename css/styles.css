@@ -11,7 +11,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensures the page is at least the height of the screen */
 }
 
 /* Header */
@@ -25,7 +25,7 @@ header {
 
 /* Main Content */
 .container {
-    flex: 1; /* Pushes footer to the bottom */
+    flex-grow: 1; /* Pushes the footer down when there's not enough content */
     max-width: 900px;
     margin: auto;
     padding: 20px;
@@ -58,7 +58,7 @@ button:hover {
     background: #0056b3;
 }
 
-/* ✅ Footer - Let it follow the content naturally */
+/* Footer */
 footer {
     background: #333;
     color: white;
