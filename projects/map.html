@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=7Q4YRU6idJNLU5AZJas1_T9BwQYcolVBvAund6q-vzWBhDbcUCIkdCw8VTVRfdy9FsZryzCwhG89pVwVIRaW4iqwcKu5tSpIHTvVwaMW4A0" charset="UTF-8"></script><base target="_top">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 	<title>Mobile tutorial - Leaflet</title>
 	
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
@@ -23,13 +21,28 @@
 			max-width: 100%;
 			max-height: 100%;
 		}
+		#map {
+			height: 100%;
+			width: 100vw;
+		}
+		#locateBtn {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			z-index: 999;
+			padding: 10px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 5px;
+		}
 	</style>
-
-	<style>body { padding: 0; margin: 0; } #map { height: 100%; width: 100vw; }</style>
 </head>
 <body>
-<h1>LocalStory Dev</h1>
-<div id='map'></div>
+
+<!-- Add button to trigger geolocation -->
+<button id="locateBtn">Get My Location</button>
+<div id="map"></div>
 
 <script>
 	const map = L.map('map').fitWorld();
@@ -52,13 +65,16 @@
 		alert(e.message);
 	}
 
+	// Wait for the user to click the button before requesting location
+	document.getElementById('locateBtn').addEventListener('click', function() {
+		// Locate the user
+		map.locate({setView: true, maxZoom: 16});
+	});
+
+	// Listen for location events
 	map.on('locationfound', onLocationFound);
 	map.on('locationerror', onLocationError);
-
-	map.locate({setView: true, maxZoom: 16});
 </script>
-
-
 
 </body>
 </html>
