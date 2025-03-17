@@ -11,7 +11,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the full height of the viewport */
+    min-height: 100vh; /* Full viewport height */
 }
 
 /* Header */
@@ -25,7 +25,7 @@ header {
 
 /* Main Content */
 .container {
-    flex: 1; /* Pushes the footer down */
+    flex: 1; /* Pushes footer down */
     max-width: 900px;
     margin: auto;
     padding: 20px;
@@ -65,7 +65,6 @@ footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    position: relative;
-    bottom: 0;
+    margin-top: auto; /* Ensures footer stays at the bottom */
     font-size: 0.9rem;
 }
