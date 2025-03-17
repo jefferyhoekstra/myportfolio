@@ -33,6 +33,12 @@
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
           crossorigin=""></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  var mutantLayer = document.querySelector('.leaflet-google-mutant');
+  if (mutantLayer) {
+    mutantLayer.style.zIndex = '399'; // Set a lower z-index to fix the issue
+  }
+});
     // Initialize the map with a default view.
     var map = L.map('map').setView([0, 0], 2);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
